@@ -60,7 +60,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Set the blocks
         self.reach!.reachableBlock = {
             (let reach: Reachability!) -> Void in
-            
             // keep in mind this is called on a background thread
             // and if you are updating the UI it needs to happen
             // on the main thread, like this:
