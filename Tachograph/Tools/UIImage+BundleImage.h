@@ -10,6 +10,7 @@
 
 @interface UIImage (BundleImage)
 
+
 + (nullable UIImage *)imageWithASName:(nullable NSString *)nameStr directory:(nullable NSString *)dirStr;
 
 + (nullable UIImage *)imageWithASName:(nullable NSString *)nameStr directory:(nullable NSString *)dirStr bundle:(nullable NSString *)bundleName;
