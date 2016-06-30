@@ -1,27 +1,29 @@
 PODS:
-  - Alamofire (3.4.0)
+  - Alamofire (3.4.1)
   - AMap3DMap (3.3.2)
   - AMapSearch (3.3.0)
   - Reachability (3.2)
-  - SDWebImage (3.7.6):
-    - SDWebImage/Core (= 3.7.6)
-  - SDWebImage/Core (3.7.6)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
   - SVProgressHUD (2.0.3)
 
 DEPENDENCIES:
   - Alamofire (~> 3.3)
-  - AMap3DMap
-  - AMapSearch
+  - AMap3DMap (~> 3.3.2)
+  - AMapSearch (~> 3.3.0)
   - Reachability (~> 3.2)
   - SDWebImage (~> 3.7)
-  - SVProgressHUD
+  - SVProgressHUD (~> 2.0.3)
 
 SPEC CHECKSUMS:
-  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   AMap3DMap: 6315b7489cb60b1c47bb51169b409c20efa5f527
   AMapSearch: cff4faf59c007f7d1f2bae2d7170c3912783981a
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: e6fe2c942bd98759e3674244f90ef8385e0534ec
+
+COCOAPODS: 1.0.1

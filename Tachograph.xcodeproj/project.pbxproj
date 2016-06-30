@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F5E6A7FC217135BE4695984 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED980BA5FF9A31A97C379AE5 /* Pods.framework */; };
+		1D1BB35737839E20911DF5EB /* Pods_Tachograph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6495726AA3AE03871663CC3 /* Pods_Tachograph.framework */; };
 		AA1AFAA01CD9E867003FD567 /* String+Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1AFA9F1CD9E867003FD567 /* String+Hash.swift */; };
 		AA1AFAA71CD9E981003FD567 /* AppColorConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1AFAA61CD9E981003FD567 /* AppColorConfigure.swift */; };
 		AA1AFAA91CD9EB23003FD567 /* AppCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1AFAA81CD9EB23003FD567 /* AppCommon.swift */; };
@@ -63,7 +63,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		12359C2876B92866D7F72584 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		AA1AFA9F1CD9E867003FD567 /* String+Hash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Hash.swift"; sourceTree = "<group>"; };
 		AA1AFAA11CD9E88C003FD567 /* Tachograph-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tachograph-Bridging-Header.h"; sourceTree = "<group>"; };
 		AA1AFAA61CD9E981003FD567 /* AppColorConfigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColorConfigure.swift; sourceTree = "<group>"; };
@@ -112,8 +111,10 @@
 		AAEB588B1CDA4DCE00F2C13D /* UIImage+BundleImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BundleImage.h"; sourceTree = "<group>"; };
 		AAEB588C1CDA4DCE00F2C13D /* UIImage+BundleImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BundleImage.m"; sourceTree = "<group>"; };
 		AAEB588E1CDA4E3E00F2C13D /* Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resources.bundle; sourceTree = "<group>"; };
-		D9EAFB7DE0BA68B23EEA2B7E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D17881931625A87FCE2F7667 /* Pods-Tachograph.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tachograph.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tachograph/Pods-Tachograph.debug.xcconfig"; sourceTree = "<group>"; };
+		E6495726AA3AE03871663CC3 /* Pods_Tachograph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tachograph.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED980BA5FF9A31A97C379AE5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1CD073E0A9A9E66D7AACB17 /* Pods-Tachograph.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tachograph.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tachograph/Pods-Tachograph.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAEB588A1CDA440500F2C13D /* SystemConfiguration.framework in Frameworks */,
-				0F5E6A7FC217135BE4695984 /* Pods.framework in Frameworks */,
+				1D1BB35737839E20911DF5EB /* Pods_Tachograph.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,15 +150,16 @@
 				AAEB58891CDA440500F2C13D /* SystemConfiguration.framework */,
 				AAEB58851CDA3F8A00F2C13D /* Security.framework */,
 				ED980BA5FF9A31A97C379AE5 /* Pods.framework */,
+				E6495726AA3AE03871663CC3 /* Pods_Tachograph.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5F8E83EE628E60DCD0089A77 /* Pods */ = {
+		A3F38CBC819FFA1F1BB49362 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D9EAFB7DE0BA68B23EEA2B7E /* Pods.debug.xcconfig */,
-				12359C2876B92866D7F72584 /* Pods.release.xcconfig */,
+				D17881931625A87FCE2F7667 /* Pods-Tachograph.debug.xcconfig */,
+				F1CD073E0A9A9E66D7AACB17 /* Pods-Tachograph.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -227,8 +229,8 @@
 				AA2B673A1CD84F0600762B69 /* TachographTests */,
 				AA2B67451CD84F0600762B69 /* TachographUITests */,
 				AA2B67211CD84F0600762B69 /* Products */,
-				5F8E83EE628E60DCD0089A77 /* Pods */,
 				510B2A39ED6D468A15F16D42 /* Frameworks */,
+				A3F38CBC819FFA1F1BB49362 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -304,12 +306,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA2B674B1CD84F0600762B69 /* Build configuration list for PBXNativeTarget "Tachograph" */;
 			buildPhases = (
-				0DD94FFEDBD8F92224716086 /* Check Pods Manifest.lock */,
+				3BA60CDD62B9877B4B015E21 /* [CP] Check Pods Manifest.lock */,
 				AA2B671C1CD84F0600762B69 /* Sources */,
 				AA2B671D1CD84F0600762B69 /* Frameworks */,
 				AA2B671E1CD84F0600762B69 /* Resources */,
-				3F9F5C325626AA744120DC63 /* Embed Pods Frameworks */,
-				76C83484016ED0751B1ED493 /* Copy Pods Resources */,
+				499D9A1CE1C40E6EE213B27E /* [CP] Embed Pods Frameworks */,
+				73303EFDC58CC883B8B8DBEA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -435,14 +437,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0DD94FFEDBD8F92224716086 /* Check Pods Manifest.lock */ = {
+		3BA60CDD62B9877B4B015E21 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,34 +452,34 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		3F9F5C325626AA744120DC63 /* Embed Pods Frameworks */ = {
+		499D9A1CE1C40E6EE213B27E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tachograph/Pods-Tachograph-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		76C83484016ED0751B1ED493 /* Copy Pods Resources */ = {
+		73303EFDC58CC883B8B8DBEA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tachograph/Pods-Tachograph-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -650,7 +652,7 @@
 		};
 		AA2B674C1CD84F0600762B69 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9EAFB7DE0BA68B23EEA2B7E /* Pods.debug.xcconfig */;
+			baseConfigurationReference = D17881931625A87FCE2F7667 /* Pods-Tachograph.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -670,7 +672,7 @@
 		};
 		AA2B674D1CD84F0600762B69 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12359C2876B92866D7F72584 /* Pods.release.xcconfig */;
+			baseConfigurationReference = F1CD073E0A9A9E66D7AACB17 /* Pods-Tachograph.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
