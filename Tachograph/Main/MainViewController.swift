@@ -72,7 +72,9 @@ extension MainViewController : MainViewDelegate{
             }else{
                 MSGLog(Message: "nothing");
             }
-            
+        }else if index == 4 {
+            // 当录制的时候，切换摄像头，录制停止，自动保存。
+            CaptureManager.sharedInstance().swapFrontAndBackCameras()
         }
         
         

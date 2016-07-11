@@ -70,6 +70,11 @@ extension CaptureManager{
         captureSessionCoordinator.stopRecording()
     }
     
+    // 切换摄像头
+    func swapFrontAndBackCameras(){
+        captureSessionCoordinator.swapFrontAndBackCameras()
+    }
+    
     // preLayer
     func prelayer() -> AVCaptureVideoPreviewLayer? {
         if captureSessionCoordinator == nil {

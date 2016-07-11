@@ -127,6 +127,88 @@ extension CaptureSessionCoordinator{
             self.captureSession.stopRunning()
         }
     }
+    
+    // Switching between front and back cameras
+    private func cameraWithPosition(position : AVCaptureDevicePosition) -> AVCaptureDevice? {
+        let devices : Array = AVCaptureDevice.devicesWithMediaType(AVMediaTypeVideo)
+        for  device in devices{
+            if let obj = device as? AVCaptureDevice {
+                if obj.position == position {
+                    return obj
+                }
+            }
+        }
+        return nil
+    }
+    
+    func swapFrontAndBackCameras(){
+        // Assume the session is already running
+        if captureSession.running {
+            
+            let inputs : NSArray = captureSession.inputs
+            
+            for input in inputs {
+                let device : AVCaptureDevice = input.device
+                if device.hasMediaType(AVMediaTypeVideo) {
+                    let position : AVCaptureDevicePosition = device.position
+                    var newCamera : AVCaptureDevice?
+                    if position == .Front {
+                        newCamera = cameraWithPosition(.Back)
+                    }else{
+                        newCamera = cameraWithPosition(.Front)
+                    }
+                    
+                    if let newDevice = newCamera {
+                        do{
+                            let newInput : AVCaptureDeviceInput = try AVCaptureDeviceInput.init(device: newDevice)
+                            captureSession.beginConfiguration()
+                            captureSession.removeInput(input as! AVCaptureInput)
+                            captureSession.addInput(newInput)
+                            captureSession.commitConfiguration()
+                        }catch{
+                            MSGLog(Message: "切换摄像头时，重新初始化输入设备失败！")
+                        }
+                    }
+                }
+            }
+            
+            
+        }else{
+            MSGLog(Message: "session not running!")
+        }
+    }
+    
+    /*
+     - (void)swapFrontAndBackCameras {
+     
+     NSArray *inputs = self.session.inputs;
+     for ( AVCaptureDeviceInput *input in inputs ) {
+     AVCaptureDevice *device = input.device;
+     if ( [device hasMediaType:AVMediaTypeVideo] ) {
+     AVCaptureDevicePosition position = device.position;
+     AVCaptureDevice *newCamera = nil;
+     AVCaptureDeviceInput *newInput = nil;
+     
+     if (position == AVCaptureDevicePositionFront)
+     newCamera = [self cameraWithPosition:AVCaptureDevicePositionBack];
+     else
+     newCamera = [self cameraWithPosition:AVCaptureDevicePositionFront];
+     newInput = [AVCaptureDeviceInput deviceInputWithDevice:newCamera error:nil];
+     
+     // beginConfiguration ensures that pending changes are not applied immediately
+     [self.session beginConfiguration];
+     
+     [self.session removeInput:input];
+     [self.session addInput:newInput];
+     
+     // Changes take effect once the outermost commitConfiguration is invoked.
+     [self.session commitConfiguration];
+     break;
+     }
+     }
+     }
+
+     */
 
 }
 
