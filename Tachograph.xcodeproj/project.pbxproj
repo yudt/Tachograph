@@ -30,6 +30,8 @@
 		AA30514C1CDB17A900B1DD94 /* CaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30514B1CDB17A900B1DD94 /* CaptureManager.swift */; };
 		AA30514E1CDB180700B1DD94 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30514D1CDB180700B1DD94 /* TabbarView.swift */; };
 		AA3051521CDB3F0B00B1DD94 /* AppConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3051511CDB3F0B00B1DD94 /* AppConfigure.swift */; };
+		AA463FD11D33800D007494B5 /* MoviePlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA463FD01D33800D007494B5 /* MoviePlayerController.swift */; };
+		AA463FD31D338A23007494B5 /* MovieListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA463FD21D338A23007494B5 /* MovieListController.swift */; };
 		AA561DF51CEEB16D004FC4A6 /* AppLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA561DF41CEEB16D004FC4A6 /* AppLog.swift */; };
 		AAAF1CA11CEF116B007FC834 /* CaptureSessionMovieFileOutputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAF1CA01CEF116B007FC834 /* CaptureSessionMovieFileOutputCoordinator.swift */; };
 		AAC2D16F1CEFF5F9000DF3DC /* CaptureSessionAssetWriterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC2D16E1CEFF5F9000DF3DC /* CaptureSessionAssetWriterCoordinator.swift */; };
@@ -92,6 +94,8 @@
 		AA30514B1CDB17A900B1DD94 /* CaptureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureManager.swift; sourceTree = "<group>"; };
 		AA30514D1CDB180700B1DD94 /* TabbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
 		AA3051511CDB3F0B00B1DD94 /* AppConfigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfigure.swift; sourceTree = "<group>"; };
+		AA463FD01D33800D007494B5 /* MoviePlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviePlayerController.swift; sourceTree = "<group>"; };
+		AA463FD21D338A23007494B5 /* MovieListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListController.swift; sourceTree = "<group>"; };
 		AA561DF41CEEB16D004FC4A6 /* AppLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLog.swift; sourceTree = "<group>"; };
 		AAAF1CA01CEF116B007FC834 /* CaptureSessionMovieFileOutputCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureSessionMovieFileOutputCoordinator.swift; sourceTree = "<group>"; };
 		AAC2D16E1CEFF5F9000DF3DC /* CaptureSessionAssetWriterCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureSessionAssetWriterCoordinator.swift; sourceTree = "<group>"; };
@@ -203,6 +207,8 @@
 				AAC2D16E1CEFF5F9000DF3DC /* CaptureSessionAssetWriterCoordinator.swift */,
 				AAC2D1701CEFF6CC000DF3DC /* AssetWriterCoordinator.swift */,
 				AAC2D1721CF2CC79000DF3DC /* FileManager.swift */,
+				AA463FD21D338A23007494B5 /* MovieListController.swift */,
+				AA463FD01D33800D007494B5 /* MoviePlayerController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -493,11 +499,13 @@
 				AAEB588D1CDA4DCE00F2C13D /* UIImage+BundleImage.m in Sources */,
 				AA1AFAA91CD9EB23003FD567 /* AppCommon.swift in Sources */,
 				AAC2D1731CF2CC7A000DF3DC /* FileManager.swift in Sources */,
+				AA463FD11D33800D007494B5 /* MoviePlayerController.swift in Sources */,
 				AAEB587A1CDA3D2C00F2C13D /* NSArray+Log.m in Sources */,
 				AA1AFAB81CD9F3DC003FD567 /* ADViewController.swift in Sources */,
 				AA30514A1CDB175E00B1DD94 /* OverlayView.swift in Sources */,
 				AA2B672C1CD84F0600762B69 /* Tachograph.xcdatamodeld in Sources */,
 				AAEB58711CDA2F6700F2C13D /* GHConst.m in Sources */,
+				AA463FD31D338A23007494B5 /* MovieListController.swift in Sources */,
 				AA3051451CDB16B300B1DD94 /* CaptureView.swift in Sources */,
 				AAC2D1711CEFF6CC000DF3DC /* AssetWriterCoordinator.swift in Sources */,
 				AA3051471CDB16C100B1DD94 /* MapView.swift in Sources */,

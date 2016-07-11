@@ -25,6 +25,11 @@ class MainViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBarHidden = true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -56,11 +61,21 @@ extension MainViewController : MainViewDelegate{
                 CaptureManager.sharedInstance().stopRecording()
 
             }
-        }else if index == 0{
+        }else if index == 2{
             let arr = FileManager.VideoModels()
-            MSGLog(Message: "\(arr)")
-            print(arr?.count)
+            
+            if let datasource = arr{
+                let movieListController = MovieListController()
+                movieListController.dataSource = datasource
+                self.navigationController?.navigationBarHidden = false
+                self.navigationController?.pushViewController(movieListController, animated: true)
+            }else{
+                MSGLog(Message: "nothing");
+            }
+            
         }
+        
+        
     }
     
 }
