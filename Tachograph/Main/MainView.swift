@@ -166,24 +166,61 @@ extension MainView{
     }
     
     @objc private func deviceOrientationDidChangeNotificationAction(noti : NSNotification){
-        
-        if rectButton.selected{
-            self.mapView.frame = self.bounds
-            self.mapView.layer.cornerRadius = 0
-            self.mapView.layer.masksToBounds = false
-            self.captureView.frame = rectButton.frame
-            self.captureView.layer.cornerRadius = 15
-            self.captureView.layer.masksToBounds = true
-            self.sendSubviewToBack(self.mapView)
+    
+        // 竖屏
+        if bounds.size.width > bounds.size.height {
+            print("width:\(bounds.size.width)  height:\(bounds.size.height)")
+            // bounds:568.0  height:320.0
+            
+            rectButton.frame = CGRectMake(bounds.size.height - rectButton.frame.size.height - margin, bounds.size.width - rectButton.frame.size.width - margin - tabbarH, rectButton.bounds.size.height, rectButton.bounds.size.width)
+            
+            if rectButton.selected{
+                // 小视图 为摄像头
+                self.mapView.frame = CGRectMake(0, 0, bounds.size.height, bounds.size.width)
+                self.mapView.layer.cornerRadius = 0
+                self.mapView.layer.masksToBounds = false
+                self.sendSubviewToBack(self.mapView)
+                self.captureView.frame = rectButton.frame
+                self.captureView.layer.cornerRadius = 15
+                self.captureView.layer.masksToBounds = true
+            }else{
+                // 小视图 为地图
+                self.captureView.frame = CGRectMake(0, 0, bounds.size.height, bounds.size.width)
+                self.captureView.layer.cornerRadius = 0
+                self.captureView.layer.masksToBounds = false
+                self.sendSubviewToBack(self.captureView)
+                self.mapView.frame = rectButton.frame
+                self.mapView.layer.cornerRadius = 15
+                self.mapView.layer.masksToBounds = true
+            }
+            
         }else{
-            self.captureView.frame = self.bounds
-            self.captureView.layer.cornerRadius = 0
-            self.captureView.layer.masksToBounds = false
-            self.mapView.frame = rectButton.frame
-            self.mapView.layer.cornerRadius = 15
-            self.mapView.layer.masksToBounds = true
-            self.sendSubviewToBack(self.captureView)
+            print("bounds:\(bounds.size.width)  height:\(bounds.size.height)")
+            // bounds:320.0  height:568.0
+            
+            // 当横向 在右下角
+            rectButton.frame = CGRectMake(bounds.size.height - rectButton.frame.size.height - margin,bounds.size.width - rectButton.frame.size.width - margin, rectButton.bounds.size.height, rectButton.bounds.size.width)
+            
+            if rectButton.selected{
+                // 小视图 为摄像头
+                self.mapView.frame = CGRectMake(0, 0, bounds.size.height, bounds.size.width)
+                self.mapView.layer.cornerRadius = 0
+                self.mapView.layer.masksToBounds = false
+                self.sendSubviewToBack(self.mapView)
+                self.captureView.frame = rectButton.frame
+                self.captureView.layer.cornerRadius = 15
+                self.captureView.layer.masksToBounds = true
+            }else{
+                // 小视图 为地图
+                self.captureView.frame = CGRectMake(0, 0, bounds.size.height, bounds.size.width)
+                self.captureView.layer.cornerRadius = 0
+                self.captureView.layer.masksToBounds = false
+                self.sendSubviewToBack(self.captureView)
+                self.mapView.frame = rectButton.frame
+                self.mapView.layer.cornerRadius = 15
+                self.mapView.layer.masksToBounds = true
+
+            }
         }
     }
-    
 }
