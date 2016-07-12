@@ -38,8 +38,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var AppNav : UINavigationController!
     var reach: Reachability?
+    private let maMapViewAPIKey = "5d8d6da33a87ef2a7af423ec8f6f76b0"
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        MAMapServices.sharedServices().apiKey = maMapViewAPIKey
+        AMapSearchServices.sharedServices().apiKey = maMapViewAPIKey
         
         isReachable()
         

@@ -11,8 +11,6 @@ import UIKit
 
 
 class MapView: UIView {
-
-    private let maMapViewAPIKey = "65ada2aa913b3db4b0f760f12c04b341"
     
     let mapView : MAMapView = MAMapView(frame : CGRectZero)
     
@@ -27,8 +25,6 @@ class MapView: UIView {
     
     func setMapView(){
         
-        MAMapServices.sharedServices().apiKey = maMapViewAPIKey
-        AMapSearchServices.sharedServices().apiKey = maMapViewAPIKey
         mapView.delegate = self
         //        mapView.language = .En // 英文，没什么卵用
         mapView.showsUserLocation = true // 打开定位
