@@ -46,6 +46,7 @@
 		AAEB588D1CDA4DCE00F2C13D /* UIImage+BundleImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AAEB588C1CDA4DCE00F2C13D /* UIImage+BundleImage.m */; };
 		AAEB588F1CDA4E3E00F2C13D /* Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AAEB588E1CDA4E3E00F2C13D /* Resources.bundle */; };
 		F418CD921D34F4A30064523A /* MusicPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CD911D34F4A30064523A /* MusicPlayViewController.swift */; };
+		F491D3551D35F2BF00AF1010 /* TaMusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491D3541D35F2BF00AF1010 /* TaMusicPlayer.swift */; };
 		F4DA82361D34D96F00BC5229 /* MusicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DA82351D34D96F00BC5229 /* MusicListViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +123,7 @@
 		ED980BA5FF9A31A97C379AE5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1CD073E0A9A9E66D7AACB17 /* Pods-Tachograph.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tachograph.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tachograph/Pods-Tachograph.release.xcconfig"; sourceTree = "<group>"; };
 		F418CD911D34F4A30064523A /* MusicPlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayViewController.swift; sourceTree = "<group>"; };
+		F491D3541D35F2BF00AF1010 /* TaMusicPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaMusicPlayer.swift; sourceTree = "<group>"; };
 		F4DA82351D34D96F00BC5229 /* MusicListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -315,6 +317,7 @@
 			children = (
 				F4DA82351D34D96F00BC5229 /* MusicListViewController.swift */,
 				F418CD911D34F4A30064523A /* MusicPlayViewController.swift */,
+				F491D3541D35F2BF00AF1010 /* TaMusicPlayer.swift */,
 			);
 			name = Music;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				AA463FD11D33800D007494B5 /* MoviePlayerController.swift in Sources */,
 				AAEB587A1CDA3D2C00F2C13D /* NSArray+Log.m in Sources */,
 				AA1AFAB81CD9F3DC003FD567 /* ADViewController.swift in Sources */,
+				F491D3551D35F2BF00AF1010 /* TaMusicPlayer.swift in Sources */,
 				AA30514A1CDB175E00B1DD94 /* OverlayView.swift in Sources */,
 				AA2B672C1CD84F0600762B69 /* Tachograph.xcdatamodeld in Sources */,
 				AAEB58711CDA2F6700F2C13D /* GHConst.m in Sources */,

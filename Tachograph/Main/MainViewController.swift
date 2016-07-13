@@ -76,7 +76,8 @@ extension MainViewController : MainViewDelegate{
             // 当录制的时候，切换摄像头，录制停止，自动保存。
             CaptureManager.sharedInstance().swapFrontAndBackCameras()
         }else if index == 0{
-            
+            let vc = MusicListViewController()
+            navigationController?.pushViewController(vc, animated: true)
         }
         
         
