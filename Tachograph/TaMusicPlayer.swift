@@ -10,13 +10,16 @@ import Foundation
 import MediaPlayer
 @objc protocol TaMusicPlayerDelegate {
     optional func playerCurrentIndexDidChange(index:Int)
+    optional func playerDidSelectPlayBtn(play:Bool)
 }
 class TaMusicPlayer:NSObject,AVAudioPlayerDelegate {
     static var singleton:TaMusicPlayer? = nil//单例
     private var player:AVAudioPlayer?//播放器
     var filePaths:[String] = []//初始值
     var currentIndex = 0//当前播放的音乐的index
-    var delegate:TaMusicPlayerDelegate?
+    var index = Int.max//上个页面传过来的index
+    var listDelegate:TaMusicPlayerDelegate?
+    var detailDelegate:TaMusicPlayerDelegate?
     class func sharedSingleton() -> TaMusicPlayer{
         if singleton == nil {
             singleton = TaMusicPlayer()
@@ -36,9 +39,12 @@ class TaMusicPlayer:NSObject,AVAudioPlayerDelegate {
         
         if player.playing {
             player.pause()
+            detailDelegate?.playerDidSelectPlayBtn?(false)
         }else{
             player.play()
+            detailDelegate?.playerDidSelectPlayBtn?(true)
         }
+        
     }
     
     func playNext(){
@@ -47,14 +53,10 @@ class TaMusicPlayer:NSObject,AVAudioPlayerDelegate {
         }else{
             currentIndex += 1
         }
-        let next = filePaths[currentIndex]
-        player = try? AVAudioPlayer(contentsOfURL: NSURL.fileURLWithPath(next))
-        player?.numberOfLoops = 0
-        player?.delegate = self
-        player?.prepareToPlay()
-        player?.play()
+        player = nil
+        play()
         if player != nil {
-            delegate?.playerCurrentIndexDidChange?(currentIndex)
+            listDelegate?.playerCurrentIndexDidChange?(currentIndex)
         }
     }
     
@@ -64,18 +66,15 @@ class TaMusicPlayer:NSObject,AVAudioPlayerDelegate {
         }else{
             currentIndex -= 1
         }
-        let pre = filePaths[currentIndex]
-        player = try? AVAudioPlayer(contentsOfURL: NSURL.fileURLWithPath(pre))
-        player?.numberOfLoops = 0
-        player?.delegate = self
-        player?.prepareToPlay()
-        player?.play()
+        player = nil
+        play()
         if player != nil {
-            delegate?.playerCurrentIndexDidChange?(currentIndex)
+            listDelegate?.playerCurrentIndexDidChange?(currentIndex)
         }
     }
     //MARK:AV
     @objc func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool){
         
     }
+    
 }

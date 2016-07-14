@@ -26,6 +26,10 @@ class MusicListViewController: UIViewController,UITableViewDataSource,UITableVie
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        TaMusicPlayer.sharedSingleton().listDelegate = nil
+    }
     //MARK:Custom Methods
     func setupTableView() {
         
@@ -67,19 +71,31 @@ class MusicListViewController: UIViewController,UITableViewDataSource,UITableVie
             cell = UITableViewCell.init(style: .Default, reuseIdentifier: reuse)
         }
         cell?.textLabel?.text = songTitles[indexPath.row]
-        cell?.selectionStyle = .None
+        cell?.selectionStyle = .Gray
         return cell!
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let controller = MusicPlayViewController()
-        controller.filePath = songfilePaths[indexPath.row]
-        TaMusicPlayer.sharedSingleton().delegate = self
-        presentViewController(controller, animated: true, completion: nil)
+        TaMusicPlayer.sharedSingleton().listDelegate = self
+        TaMusicPlayer.sharedSingleton().detailDelegate = controller
+        TaMusicPlayer.sharedSingleton().currentIndex = indexPath.row
+        if TaMusicPlayer.sharedSingleton().index != indexPath.row {
+            presentViewController(controller, animated: true) {
+                TaMusicPlayer.sharedSingleton().play()
+                TaMusicPlayer.sharedSingleton().index = indexPath.row
+            }
+        }else{
+            presentViewController(controller, animated: true, completion: nil)
+        }
+        
+        
     }
     //MARK:TA
     func playerCurrentIndexDidChange(index:Int){
+        print("唱到\(index)");
         tableView.selectRowAtIndexPath(NSIndexPath.init(forRow: index, inSection: 0), animated: true, scrollPosition: .Top)
+        TaMusicPlayer.sharedSingleton().index = index
     }
 
 }
