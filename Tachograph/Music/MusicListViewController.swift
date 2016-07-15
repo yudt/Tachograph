@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import FreeStreamer
 
 class MusicListViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,TaMusicPlayerDelegate {
 
+    var playlistItems:[FSPlaylistItem] = []
+
     let tableView = UITableView()
     let reuse = "Cell"
-    var songfilePaths:[String] = []
-    var songTitles:[String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,13 +47,7 @@ class MusicListViewController: UIViewController,UITableViewDataSource,UITableVie
     }
     
     func requireLocalSongsAndReload() {
-        let songFilePath1 = getSongFilePath("莉莉安")
-        songfilePaths.append(songFilePath1)
-        songTitles.append("莉莉安")
-        let songFilePath2 = getSongFilePath("生活不止眼前的苟且")
-        songfilePaths.append(songFilePath2)
-        songTitles.append("生活不止眼前的苟且")
-        TaMusicPlayer.sharedSingleton().filePaths = songfilePaths
+        
     }
     
     func getSongFilePath(filePath:String) -> String{
@@ -62,7 +58,7 @@ class MusicListViewController: UIViewController,UITableViewDataSource,UITableVie
 
     //MARK:TableView
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return songfilePaths.count
+        return 3
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -70,7 +66,7 @@ class MusicListViewController: UIViewController,UITableViewDataSource,UITableVie
         if cell == nil {
             cell = UITableViewCell.init(style: .Default, reuseIdentifier: reuse)
         }
-        cell?.textLabel?.text = songTitles[indexPath.row]
+//        cell?.textLabel?.text = songTitles[indexPath.row]
         cell?.selectionStyle = .Gray
         return cell!
     }
