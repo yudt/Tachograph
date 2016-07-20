@@ -31,7 +31,6 @@
 		AA3051521CDB3F0B00B1DD94 /* AppConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3051511CDB3F0B00B1DD94 /* AppConfigure.swift */; };
 		AA3BF50A1D36270500A9927B /* MusicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3BF5071D36270500A9927B /* MusicListViewController.swift */; };
 		AA3BF50B1D36270500A9927B /* MusicPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3BF5081D36270500A9927B /* MusicPlayViewController.swift */; };
-		AA3BF50C1D36270500A9927B /* TaMusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3BF5091D36270500A9927B /* TaMusicPlayer.swift */; };
 		AA463FD11D33800D007494B5 /* MoviePlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA463FD01D33800D007494B5 /* MoviePlayerController.swift */; };
 		AA463FD31D338A23007494B5 /* MovieListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA463FD21D338A23007494B5 /* MovieListController.swift */; };
 		AA561DF51CEEB16D004FC4A6 /* AppLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA561DF41CEEB16D004FC4A6 /* AppLog.swift */; };
@@ -47,6 +46,7 @@
 		AAEB588A1CDA440500F2C13D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAEB58891CDA440500F2C13D /* SystemConfiguration.framework */; };
 		AAEB588D1CDA4DCE00F2C13D /* UIImage+BundleImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AAEB588C1CDA4DCE00F2C13D /* UIImage+BundleImage.m */; };
 		AAEB588F1CDA4E3E00F2C13D /* Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AAEB588E1CDA4E3E00F2C13D /* Resources.bundle */; };
+		F47F9DCA1D38E3D7005C6999 /* TaSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F9DC91D38E3D7005C6999 /* TaSong.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,7 +97,6 @@
 		AA3051511CDB3F0B00B1DD94 /* AppConfigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfigure.swift; sourceTree = "<group>"; };
 		AA3BF5071D36270500A9927B /* MusicListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicListViewController.swift; sourceTree = "<group>"; };
 		AA3BF5081D36270500A9927B /* MusicPlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayViewController.swift; sourceTree = "<group>"; };
-		AA3BF5091D36270500A9927B /* TaMusicPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaMusicPlayer.swift; sourceTree = "<group>"; };
 		AA463FD01D33800D007494B5 /* MoviePlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviePlayerController.swift; sourceTree = "<group>"; };
 		AA463FD21D338A23007494B5 /* MovieListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListController.swift; sourceTree = "<group>"; };
 		AA561DF41CEEB16D004FC4A6 /* AppLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLog.swift; sourceTree = "<group>"; };
@@ -123,6 +122,7 @@
 		E6495726AA3AE03871663CC3 /* Pods_Tachograph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tachograph.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED980BA5FF9A31A97C379AE5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1CD073E0A9A9E66D7AACB17 /* Pods-Tachograph.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tachograph.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tachograph/Pods-Tachograph.release.xcconfig"; sourceTree = "<group>"; };
+		F47F9DC91D38E3D7005C6999 /* TaSong.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaSong.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,7 +289,7 @@
 			children = (
 				AA3BF5071D36270500A9927B /* MusicListViewController.swift */,
 				AA3BF5081D36270500A9927B /* MusicPlayViewController.swift */,
-				AA3BF5091D36270500A9927B /* TaMusicPlayer.swift */,
+				F47F9DC91D38E3D7005C6999 /* TaSong.swift */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -500,7 +500,6 @@
 				AA463FD11D33800D007494B5 /* MoviePlayerController.swift in Sources */,
 				AAEB587A1CDA3D2C00F2C13D /* NSArray+Log.m in Sources */,
 				AA1AFAB81CD9F3DC003FD567 /* ADViewController.swift in Sources */,
-				AA3BF50C1D36270500A9927B /* TaMusicPlayer.swift in Sources */,
 				AA2B672C1CD84F0600762B69 /* Tachograph.xcdatamodeld in Sources */,
 				AAEB58711CDA2F6700F2C13D /* GHConst.m in Sources */,
 				AA463FD31D338A23007494B5 /* MovieListController.swift in Sources */,
@@ -513,6 +512,7 @@
 				AAEB58741CDA2F9E00F2C13D /* NSDictionary+NullSafe.m in Sources */,
 				AA3051431CDB0E8F00B1DD94 /* MainView.swift in Sources */,
 				AAC2D16F1CEFF5F9000DF3DC /* CaptureSessionAssetWriterCoordinator.swift in Sources */,
+				F47F9DCA1D38E3D7005C6999 /* TaSong.swift in Sources */,
 				AA236C111CD99111001440B0 /* main.swift in Sources */,
 				AA30514C1CDB17A900B1DD94 /* CaptureManager.swift in Sources */,
 				AA30514E1CDB180700B1DD94 /* TabbarView.swift in Sources */,

@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import FreeStreamer
+import Alamofire
 
-class MusicPlayViewController: UIViewController,TaMusicPlayerDelegate{
+class MusicPlayViewController: UIViewController{
     
     var playBtn = UIButton()
     var progressView:UIProgressView?
+    var songId:String = ""
+    var playing = false
+    lazy var audioSteam = FSAudioStream()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        audioSteam.strictContentTypeChecking = false
+        getSongInfo()
         setupUI()
     }
 
@@ -75,7 +81,7 @@ class MusicPlayViewController: UIViewController,TaMusicPlayerDelegate{
         view.addSubview(preBtn)
         view.addConstraints([widthCon,heightCon,centerXCon,bottomCon])
         
-        playBtn.setTitle("暂停", forState: .Normal)
+        playBtn.setTitle("播放", forState: .Normal)
         playBtn.setTitleColor(UIColor.redColor(), forState: .Normal)
         playBtn.layer.masksToBounds = true
         playBtn.layer.cornerRadius = 5
@@ -109,28 +115,71 @@ class MusicPlayViewController: UIViewController,TaMusicPlayerDelegate{
         
     }
     
+    func getSongInfo(){
+        
+        Alamofire.request(.GET, rootUrl, parameters: ["format": "json","callback":"","from":"webapp_music","method":"baidu.ting.song.play","songid":self.songId]).validate()
+            .responseJSON { response in
 
+                
+                guard var responseStr = String(data: response.data!, encoding: NSUTF8StringEncoding) else {
+                    return
+                }
+                if responseStr.hasSuffix(";"){
+                    
+                    responseStr = responseStr.substringToIndex(responseStr.endIndex.advancedBy(-1))
+                    
+                }
+                do {
+                    print("\(responseStr)")
+                    guard let songInfoDic = try (NSJSONSerialization.JSONObjectWithData(responseStr.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as! [[String:AnyObject]]).first else {
+                        return
+                    }
+                    if songInfoDic["error_code"] as? Int == 22000 {
+                        
+                        guard let bitrateDic = songInfoDic["bitrate"] as? [String:AnyObject] else {
+                            
+                            return
+                        }
+                        self.audioSteam.url = NSURL(string: bitrateDic["file_link"] as! String)
+                        self.performSelector(#selector(self.play), onThread: NSThread.mainThread(), withObject: nil, waitUntilDone: true)
+                    }
+
+
+                    
+                }catch{
+                    let alert = UIAlertController(title: "解析网络音频文件时发生错误", message: "\(error)", preferredStyle: .Alert)
+                    let cancel = UIAlertAction(title: "知道了", style: .Cancel, handler: nil)
+                    alert.addAction(cancel)
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+
+        }
+        
+        
+    }
     //MARK:Touch Methods
     @objc func playPre() {
-        TaMusicPlayer.sharedSingleton().playPre()
+        
     }
     
     @objc func play() {
-        TaMusicPlayer.sharedSingleton().play()
+        playerDidSelectPlayBtn()
+        audioSteam.play()
     }
     
     @objc func playNext() {
-        TaMusicPlayer.sharedSingleton().playNext()
+        
     }
     @objc func back() {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func playerDidSelectPlayBtn(play: Bool) {
-        if play {
+    func playerDidSelectPlayBtn() {
+        if playing {
             playBtn.setTitle("暂停", forState: .Normal)
         }else{
             playBtn.setTitle("播放", forState: .Normal)
         }
+        playing = !playing
     }
 }
